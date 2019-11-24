@@ -1,5 +1,5 @@
 const genDefaultOptions = () => ({
-  regex: /\$s\(([a-zA-Z_\$]+),([^,]+),([^;]*)\);/,
+  regex: /\$s\(([a-zA-Z0-9_\$]+),([^,]+),([^(;\))]*)\);/,
   maxReplacementCount: 1000,
 });
 

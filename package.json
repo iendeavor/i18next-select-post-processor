@@ -1,6 +1,6 @@
 {
   "name": "i18next-select-post-processor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A i18next plugin enabling select feature similar to ICU.",
   "main": "index.js",
   "repository": "https://github.com/iendeavor/i18next-select-post-processor",
@@ -12,7 +12,7 @@
     "i18next-postProcessor"
   ],
   "scripts": {
-    "babel": "babel src -d lib --minified --delete-dir-on-start",
+    "build": "babel src -d dist --minified --delete-dir-on-start",
     "lint": "eslint --fix ."
   },
   "devDependencies": {
