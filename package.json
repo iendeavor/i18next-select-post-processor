@@ -1,7 +1,7 @@
 {
   "name": "i18next-select-post-processor",
-  "version": "1.0.2",
-  "description": "A i18next plugin enabling select feature similar to ICU.",
+  "version": "1.0.3",
+  "description": "A conditional ability that make i18next more powerful.",
   "main": "index.js",
   "repository": "https://github.com/iendeavor/i18next-select-post-processor",
   "author": "Ernest (https://github.com/iendeavor)",

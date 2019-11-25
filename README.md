@@ -2,18 +2,14 @@
 
 [![npm version](https://img.shields.io/npm/v/i18next-select-post-processor.svg?style=flat-square)](https://www.npmjs.com/package/i18next-select-post-processor)
 
-A i18next plugin enabling select feature similar to ICU.
+A conditional ability that make i18next more powerful.
 
 # Getting Started
 
 ```
 # npm package
 $ npm install i18next-select-post-processor
-
-# yarn
-$ yarn add i18next-select-post-processor
 ```
-
 
 # Usage
 
@@ -31,23 +27,20 @@ i18next
 ```js
 const translation = {
   example: {
-    basic: `$s(female,true,She's a lady.);`,
-    nested: `$s(female,true,She's a $s(name,"alice",lady.););`,
-    concat: `$s(female,true,She's a );$s(name,"alice",lady.);`,
-    withOption: `$s(female,true,She's a {{noun}}.);`
+    basic: `$s(female,true,She is a lady.);`,
+    nesting: `$s(cond1,true,She $s(cond2,true,is $s(cond3,true,a $s(cond4,true,lady.););););`,
+    concatenation: `$s(cond1,true,She );$s(cond2,true,is );$s(cond3,true,a );$s(cond4,true,lady.);`
   }
 };
-
-export default translation;
 ```
 
 ```js
-i18next.t(example.basic,{ "female": true, "postProcess": "select" });
-i18next.t(example.nested,{ "female": true, "name": "alice", "postProcess": "select" });
-i18next.t(example.concat,{ "female": true, "name": "alice", "postProcess": "select" });
-i18next.t(example.withOption, { "female": true, "name": "alice", "noun": "lady", "postProcess": "select" });
-
-// => She's a lady
+i18next.t(example.basic, { "postProcess": "select" });
+// => She's a lady.
+i18next.t(example.nesting, {"postProcess": "select", "cond1": true, "cond2": true, "cond3": true, "cond4": true});
+// => She's a lady.
+i18next.t(example.concatenation, {"postProcess": "select", "cond1": true, "cond2": true, "cond3": true, "cond4": true});
+// => She's a lady.
 ```
 
 # Online Demo
@@ -62,7 +55,7 @@ import SelectPostprocessor from 'i18next-select-post-processor';
 
 SelectPostprocessor.updateOptions({
   // this are the defaults
-  regex: /\$s\(([a-zA-Z_\$]+),([^,]+),([^;]*)\);/,
+  regex: /\$s\(([a-zA-Z0-9_\$]+),([^,]+),([^(;\))]*)\);/,
   maxReplacementCount: 1000,
 });
 
