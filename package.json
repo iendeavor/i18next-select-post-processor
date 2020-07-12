@@ -1,6 +1,6 @@
 {
   "name": "i18next-select-post-processor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A conditional ability that make i18next more powerful.",
   "main": "index.js",
   "repository": "https://github.com/iendeavor/i18next-select-post-processor",
