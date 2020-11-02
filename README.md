@@ -1,7 +1,7 @@
 # Introduction
 
 [![npm version](https://img.shields.io/npm/v/i18next-select-post-processor.svg?style=flat-square)](https://www.npmjs.com/package/i18next-select-post-processor)
-[![HitCount](http://hits.dwyl.com/iendeavor/i18next-select-post-processor.svg)](http://hits.dwyl.com/iendeavor/i18next-select-post-processor)
+![visitors](https://visitor-badge.glitch.me/badge?page_id=iendeavor.i18next-select-post-processor)
 
 A conditional ability that make i18next more powerful.
 
